@@ -7,7 +7,7 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 #    state = var.boot_volume_backup_state
   filter {
     name = "id"
-    values = ["ocid1.bootvolumebackup*"]
+    values = ["ocid1.bootvolumebackup.oc1.sa-saopaulo-1.abtxeljreapvn4nknubhpyurcv5wexun7z2j4m65zoaipgbhvgigyuwm4x2a"]
   }
 }
 
