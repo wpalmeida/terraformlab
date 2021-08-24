@@ -13,7 +13,7 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 }*/
 
 locals {
-  raw_data     = jsondecode(data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups)
+  raw_data = jsondecode("data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups")
 }
 
 output "block" {
