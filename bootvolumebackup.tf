@@ -7,6 +7,19 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 #    state = var.boot_volume_backup_state
 }
 
+/*locals {
+  raw_data     = jsondecode(file("${path.module}/example.json"))
+  event_topics = local.raw_data.Events[*].Topic
+}*/
+
+locals {
+  raw_data     = jsondecode(data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups)
+}
+
 output "block" {
   value = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups
+}
+
+output "locals" {
+  value = locals.raw_data
 }
