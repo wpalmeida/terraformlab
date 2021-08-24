@@ -25,11 +25,7 @@ output "locals" {
 }
 
 locals {    
-    bkp_id2 = var.bkp_id.tolist.id
-}
-
-variable "bkp_id"{
-  default = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups
+    bkp_id2 = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups.tolist.id
 }
  
 output "roles" {
