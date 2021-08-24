@@ -13,7 +13,7 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 }*/
 
 locals {
-  raw_data = jsondecode(data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups.body)
+  raw_data = jsondecode(data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups)
 }
 
 output "block" {
@@ -22,4 +22,14 @@ output "block" {
 
 output "locals" {
   value = local.raw_data
+}
+
+locals {    
+    bkp_id = var.tolist.id
+}
+ 
+variable data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups {}
+ 
+output "roles" {
+    value = local.bkp_id
 }
