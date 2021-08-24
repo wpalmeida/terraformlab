@@ -21,5 +21,5 @@ output "block" {
 }
 
 output "locals" {
-  value = locals.raw_data
+  value = local.raw_data
 }
