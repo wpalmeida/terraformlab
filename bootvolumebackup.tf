@@ -7,6 +7,10 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 #    state = var.boot_volume_backup_state
 }
 
-output "ids" {
+output "block" {
   value = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups
+}
+
+output "id" {
+  value = data.oci_core_boot_volume_backups.test_boot_volume_backups.id
 }
