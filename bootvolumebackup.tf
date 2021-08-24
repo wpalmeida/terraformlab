@@ -8,5 +8,5 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 }
 
 output "ids" {
-  value = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups
+  value = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups.id
 }
