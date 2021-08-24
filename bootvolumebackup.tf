@@ -6,8 +6,8 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 #    source_boot_volume_backup_id = oci_core_boot_volume_backup.test_boot_volume_backup.id
 #    state = var.boot_volume_backup_state
   filter {
-    name = "id_name"
-    values = ["id_value"]
+    name = "id"
+    values = ["ocid1.bootvolumebackup*"]
   }
 }
 
