@@ -5,10 +5,11 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 #    display_name = var.boot_volume_backup_display_name
 #    source_boot_volume_backup_id = oci_core_boot_volume_backup.test_boot_volume_backup.id
 #    state = var.boot_volume_backup_state
+    freeform_tags = {"name": "terraform"}
 }
 
 output "block" {
-  value = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups.id
+  value = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups
 }
 
 output "id" {
