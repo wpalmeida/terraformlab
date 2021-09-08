@@ -6,28 +6,3 @@ data "oci_core_boot_volume_backups" "test_boot_volume_backups" {
 #    source_boot_volume_backup_id = oci_core_boot_volume_backup.test_boot_volume_backup.id
 #    state = var.boot_volume_backup_state
 }
-
-/*locals {
-  raw_data     = jsondecode(file("${path.module}/example.json"))
-  event_topics = local.raw_data.Events[*].Topic
-}*/
-
-locals {
-  raw_data = jsondecode(data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups)
-}
-
-output "block" {
-  value = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups
-}
-
-output "locals" {
-  value = local.raw_data
-}
-
-locals {    
-    bkp_id2 = data.oci_core_boot_volume_backups.test_boot_volume_backups.boot_volume_backups
-}
- 
-output "roles" {
-    value = local.bkp_id2
-}
